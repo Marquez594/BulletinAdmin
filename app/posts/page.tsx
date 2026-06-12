@@ -23,11 +23,11 @@ export default async function Posts({
   const { data: postData } = await query;
 
   return (
-    <div className="p-10 flex flex-col gap-6">
+    <div className="md:p-10 flex flex-col gap-6 p-4">
       <header className="flex items-center">
         <div className="flex flex-col">
-          <h1 className="text-5xl text-pink-400 font-bold">Posts</h1>
-          <p className="text-gray-400">
+          <h1 className="md:text-5xl text-pink-400 font-bold text-2xl">Posts</h1>
+          <p className="text-gray-400 text-sm">
             View all posts, sort them and search for specific posts
           </p>
         </div>
@@ -40,7 +40,7 @@ export default async function Posts({
         <h1 className="text-2xl p-4">List of Posts</h1>
 
         <div className="flex-1 overflow-y-auto">
-          <table className="w-full">
+          <table className="lg:min-w-full min-w-200">
             <thead className="sticky top-0 z-10">
               <tr className="bg-pink-400">
                 <th className="p-2">Post ID</th>

@@ -9,11 +9,11 @@ type SearchProp = {
 
 export default function Search({ option = "both" }: SearchProp) {
   const params = useSearchParams();
-  const q = params.get("q") ?? ""
+  const q = params.get("q") ?? "";
 
   return (
     <form
-      className="ml-auto bg-[#2a1f36] pl-4  w-2/5 p-1 flex items-center gap-2 rounded-2xl border border-pink-400"
+      className="ml-auto bg-[#2a1f36] pl-2  w-1/2 lg:w-2/5 p-1 flex items-center gap-1 md:gap-1 rounded-2xl border border-pink-400"
       action={"/search"}
     >
       <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
@@ -31,7 +31,7 @@ export default function Search({ option = "both" }: SearchProp) {
         name="q"
         defaultValue={q ?? ""}
         required
-        className="flex-1 focus:outline-none focus-visible:border-pink-400 focus-visible:ring-2 focus-visible:ring-pink-400"
+        className="flex-1 min-w-0 focus:outline-none focus-visible:border-pink-400 focus-visible:ring-2 focus-visible:ring-pink-400"
         placeholder={
           option == "both"
             ? "Search Users and Post"
@@ -45,7 +45,7 @@ export default function Search({ option = "both" }: SearchProp) {
 
       <button
         type="submit"
-        className="bg-pink-400 text-[#2a1f36] p-1 px-3 rounded-xl hover:cursor-pointer"
+        className="bg-pink-400 text-[#2a1f36] p-1 px-3 rounded-xl hover:cursor-pointer text-sm"
       >
         Submit
       </button>

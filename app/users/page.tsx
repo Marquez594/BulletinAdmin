@@ -25,11 +25,11 @@ export default async function Users({
   const { data: userData } = await query;
 
   return (
-    <div className="p-10 flex flex-col gap-6">
+    <div className="md:p-10 flex flex-col gap-6 p-4">
       <header className="flex items-center">
         <div className="flex flex-col">
-          <h1 className="text-5xl text-pink-400 font-bold">Users</h1>
-          <p className="text-gray-400">
+          <h1 className="md:text-5xl text-pink-400 font-bold text-2xl">Users</h1>
+          <p className="text-gray-400 text-sm">
             View All users, look up users and manage their accounts
           </p>
         </div>
@@ -41,10 +41,10 @@ export default async function Users({
       <div className="w-full h-128 bg-[#2a1f36] rounded-2xl flex flex-col">
         <h1 className="text-2xl p-4">List of Users</h1>
         <div className="flex-1 overflow-y-auto">
-          <table className="w-full">
+          <table className="lg:min-w-full min-w-200">
             <thead className="sticky top-0 z-10">
               <tr className="bg-pink-400">
-                <th className="p-2">UID</th>
+                <th className="p-2 w-1/8">UID</th>
                 <th>Username</th>
                 <th>Firstname</th>
                 <th>Lastname</th>

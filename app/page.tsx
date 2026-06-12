@@ -62,12 +62,12 @@ export default async function Home() {
   if (usersError) console.log(usersError);
 
   return (
-    <div className="p-10 flex flex-col gap-6 ">
+    <div className="md:p-10 flex flex-col gap-6 p-4">
       <header className="flex items-center ">
         {/**Header */}
-        <div className="flex flex-col">
-          <h1 className="text-5xl text-pink-400 font-bold">Dashboard</h1>
-          <p className="text-gray-400">
+        <div className="flex flex-col lg:max-w-1/2 md:max-w-1/3">
+          <h1 className="lg:text-5xl text-pink-400 font-bold md:text-4xl text-2xl">Dashboard</h1>
+          <p className="text-gray-400 text-sm md:text-md">
             Welcome, here are some quick useful information
           </p>
         </div>
@@ -167,23 +167,23 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="h-96 bg-[#2a1f36]  rounded-2xl overflow-x-hidden ">
-        <table className="w-full border-collapse ">
-          <thead className="p-2 ">
-            <tr className="bg-pink-400 ">
-              <th className="py-3">UID</th>
-              <th>Username</th>
-              <th>Firstname</th>
-              <th>Last Name</th>
-              <th>Date Created</th>
-              <th>Actions</th>
+      <section className="h-96 bg-[#2a1f36]  rounded-2xl overflow-x-scroll ">
+        <table className="lg:min-w-full border-collapse min-w-[800px]">
+          <thead className="p-2">
+            <tr className="bg-pink-400">
+              <th className="py-3  w-1/4">UID</th>
+              <th className="">Username</th>
+              <th className="">Firstname</th>
+              <th className="">Last Name</th>
+              <th className="w-1/4">Date Created</th>
+              <th className="">Actions</th>
             </tr>
           </thead>
           <tbody>
             {(userData as UserType[] | null)
               ? userData?.map((user: UserType, index) => (
                   <tr
-                    className="text-center border-b border-gray-400"
+                    className="text-center border-b border-gray-400 text-sm"
                     key={index}
                   >
                     <td className="py-2">{user.uid}</td>
