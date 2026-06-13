@@ -205,14 +205,6 @@ export default async function Home() {
                   </tr>
                 ))
               : null}
-            <tr className="text-center border-b border-gray-400">
-              <td className="py-2">233434</td>
-              <td>Minus</td>
-              <td>Firstname</td>
-              <td>Lastname</td>
-              <td>Yesterday</td>
-              <td>E</td>
-            </tr>
           </tbody>
         </table>
       </section>
