@@ -5,6 +5,7 @@ import UserSetting from "@/components/viewUserSettings";
 import type { UserType } from "@/types";
 import { supabase } from "@/lib/supabase";
 import Search from "@/components/search";
+import { Suspense } from "react";
 
 export default async function Users({
   searchParams,
@@ -28,12 +29,16 @@ export default async function Users({
     <div className="md:p-10 flex flex-col gap-6 p-4">
       <header className="flex items-center">
         <div className="flex flex-col">
-          <h1 className="md:text-5xl text-pink-400 font-bold text-2xl">Users</h1>
+          <h1 className="md:text-5xl text-pink-400 font-bold text-2xl">
+            Users
+          </h1>
           <p className="text-gray-400 text-sm">
             View All users, look up users and manage their accounts
           </p>
         </div>
-        <Search option="user"></Search>
+        <Suspense fallback={null}>
+          <Search option="user"></Search>
+        </Suspense>
       </header>
 
       <UserFilters></UserFilters>

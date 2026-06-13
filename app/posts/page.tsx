@@ -3,6 +3,7 @@ import Search from "@/components/search";
 import PostSetting from "@/components/viewPostSettings";
 import { supabase } from "@/lib/supabase";
 import { PostType, PostUserType } from "@/types";
+import { Suspense } from "react";
 
 export default async function Posts({
   searchParams,
@@ -26,12 +27,16 @@ export default async function Posts({
     <div className="md:p-10 flex flex-col gap-6 p-4">
       <header className="flex items-center">
         <div className="flex flex-col">
-          <h1 className="md:text-5xl text-pink-400 font-bold text-2xl">Posts</h1>
+          <h1 className="md:text-5xl text-pink-400 font-bold text-2xl">
+            Posts
+          </h1>
           <p className="text-gray-400 text-sm">
             View all posts, sort them and search for specific posts
           </p>
         </div>
-        <Search option="post"></Search>
+        <Suspense>
+          <Search option="post"></Search>
+        </Suspense>
       </header>
 
       <PostFilters></PostFilters>

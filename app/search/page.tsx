@@ -4,6 +4,7 @@ import PostSetting from "@/components/viewPostSettings";
 import UserSetting from "@/components/viewUserSettings";
 import { supabase } from "@/lib/supabase";
 import { PostUserType, type UserType } from "@/types";
+import { Suspense } from "react";
 
 export default async function SearchPage({
   searchParams,
@@ -53,17 +54,19 @@ export default async function SearchPage({
           <h1 className="text-5xl text-pink-400 font-bold">Search</h1>
           <p className="text-gray-400">Results of search</p>
         </div>
-        <Search
-          option={
-            posts == "true" && users == "true"
-              ? "both"
-              : posts == "true" && users == "false"
-                ? "post"
-                : posts == "false" && users == "true"
-                  ? "user"
-                  : "both"
-          }
-        ></Search>
+        <Suspense fallback={null}>
+          <Search
+            option={
+              posts == "true" && users == "true"
+                ? "both"
+                : posts == "true" && users == "false"
+                  ? "post"
+                  : posts == "false" && users == "true"
+                    ? "user"
+                    : "both"
+            }
+          ></Search>
+        </Suspense>
       </header>
 
       <SearchFilters></SearchFilters>

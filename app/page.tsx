@@ -10,6 +10,7 @@ import UserSetting from "@/components/viewUserSettings";
 import PostSetting from "@/components/viewPostSettings";
 import Link from "next/link";
 import Search from "@/components/search";
+import { Suspense } from "react";
 
 export default async function Home() {
   const { count: userCount, error: userCountError } = await supabase
@@ -71,7 +72,9 @@ export default async function Home() {
             Welcome, here are some quick useful information
           </p>
         </div>
+        <Suspense fallback={null}>
         <Search option="both"></Search>
+        </Suspense>
       </header>
       <section className="grid  gap-6 grid-cols-2">
         {/**Modules */}
