@@ -12,6 +12,8 @@ import Link from "next/link";
 import Search from "@/components/search";
 import { Suspense } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const { count: userCount, error: userCountError } = await supabase
     .from("users")
@@ -67,13 +69,15 @@ export default async function Home() {
       <header className="flex items-center ">
         {/**Header */}
         <div className="flex flex-col lg:max-w-1/2 md:max-w-1/3">
-          <h1 className="lg:text-5xl text-pink-400 font-bold md:text-4xl text-2xl">Dashboard</h1>
+          <h1 className="lg:text-5xl text-pink-400 font-bold md:text-4xl text-2xl">
+            Dashboard
+          </h1>
           <p className="text-gray-400 text-sm md:text-md">
             Welcome, here are some quick useful information
           </p>
         </div>
         <Suspense fallback={null}>
-        <Search option="both"></Search>
+          <Search option="both"></Search>
         </Suspense>
       </header>
       <section className="grid  gap-6 grid-cols-2">
